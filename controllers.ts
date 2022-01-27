@@ -1,12 +1,13 @@
 import express from 'express';
 import uuid from 'uuid';
+import { Auction, Bid, User } from './types';
 
 const router = express.Router();
 
 // our 'database' (we'll be adding an actual database connection during the SQL workshop)
-const auctions = new Map();
-const bids = new Map();
-const users = new Map();
+const auctions = new Map<string, Auction>();
+const bids = new Map<string, Bid>();
+const users = new Map<string, User>();
 
 router.get('/auction/:id', (req, res) => {
   const { id } = req.params;
