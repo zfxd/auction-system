@@ -3,6 +3,7 @@ import uuid from 'uuid';
 
 const router = express.Router();
 
+// our 'database' (we'll be adding an actual database connection during the SQL workshop)
 const auctions = new Map();
 const bids = new Map();
 const users = new Map();
