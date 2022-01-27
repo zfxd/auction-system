@@ -1,29 +1,31 @@
 export type Auction = {
+  id?: string;
   uuid: string;
   auctioneer: string;
   name: string;
   description: string;
   start: Date;
   end: Date;
-  startingBid: number
-  minIncrement: number	// the minimum difference between the highest existing bid and an incoming bid
+  startingBid: number;
+  currentBid: Bid;
+  minIncrement: number;	// the minimum difference between the highest existing bid and an incoming bid
 }
 
 export type Bid = {
-  uuid: string;
-  auction: string;
+  id: string;
+  auctionId: string;
   bidder: string;
   amount: number;
 }
 
 export type User = {
-  uuid: string;
+  id: string;
   username: string;
   balance: number;
 }
 
 export type Item = {
-  uuid: string;
+  id: string;
   owner: string;
   value: number;
 }
