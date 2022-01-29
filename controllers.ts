@@ -1,6 +1,6 @@
 import express from 'express';
 import uuid from 'uuid';
-import { Auction, Bid, User } from './types';
+import { Auction, Bid, Item, User } from './types';
 
 const router = express.Router();
 
@@ -8,6 +8,7 @@ const router = express.Router();
 const auctions = new Map<string, Auction>();
 const bids = new Map<string, Bid>();
 const users = new Map<string, User>();
+const items = new Map<string, Item>();
 
 router.get('/auction/:id', (req, res) => {
   const { id } = req.params;
@@ -24,10 +25,28 @@ router.post('/auction', (req, res) => {
 });
 
 router.post('/auction/:id/bid', (req, res) => {
-  // TODO: implement
+  // TODO: implement based on below steps
+  // 1. check if auction id is valid
+  
+  // 2. check if auction hasn't ended
+  
+  // 3. check if user id is valid
+  
+  // 4. check if user has enough balance to place this bid
+  
+  // 5. check if bid amount is high enough
+  
+  // 6. update our database
+  
+  // 7. return successful response
+  
 });
 
 router.post('/user', (req, res) => {
+  // TODO: implement
+});
+
+router.post('/item', (req, res) => {
   // TODO: implement
 });
 
