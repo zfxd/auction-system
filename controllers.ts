@@ -10,6 +10,11 @@ const bids = new Map<string, Bid>();
 const users = new Map<string, User>();
 const items = new Map<string, Item>();
 
+router.get('/auctions', (req, res) => {
+  const auctionList = Array.from(auctions.values());
+  return res.status(200).json({ auctions: auctionList });
+});
+
 router.get('/auction/:id', (req, res) => {
   const { id } = req.params;
   const auction = auctions.get(id);
@@ -45,10 +50,5 @@ router.post('/auction/:id/bid', (req, res) => {
 router.post('/user', (req, res) => {
   // TODO: implement
 });
-
-router.post('/item', (req, res) => {
-  // TODO: implement
-});
-
 
 export default router;
