@@ -1,5 +1,5 @@
 import express from 'express';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 import { Auction, Bid, User } from './types';
 
 const router = express.Router();
