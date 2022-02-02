@@ -9,6 +9,16 @@ const auctions = new Map<string, Auction>();
 const bids = new Map<string, Bid>();
 const users = new Map<string, User>();
 
+// add a fake auctioneer
+const auctioneerId = '249b2f8b-5285-4031-a164-63102017a9ba';
+const auctioneer = {
+  id: auctioneerId,
+  username: 'auctioneer',
+  balance: 100,
+}
+users.set(auctioneerId, auctioneer);
+
+// define the routes
 router.get('/auctions', (req, res) => {
   const auctionList = Array.from(auctions.values());
   return res.status(200).json({ auctions: auctionList });
