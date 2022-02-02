@@ -22,9 +22,3 @@ export type User = {
   username: string;
   balance: number;
 }
-
-export type Item = {
-  uuid: string;
-  owner: string;
-  value: number;
-}
