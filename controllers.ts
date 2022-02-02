@@ -8,7 +8,6 @@ const router = express.Router();
 const auctions = new Map<string, Auction>();
 const bids = new Map<string, Bid>();
 const users = new Map<string, User>();
-const items = new Map<string, Item>();
 
 router.get('/auctions', (req, res) => {
   const auctionList = Array.from(auctions.values());
