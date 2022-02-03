@@ -11,7 +11,9 @@ const users = new Map<string, User>();
 
 // add a fake auctioneer
 const auctioneerId = '249b2f8b-5285-4031-a164-63102017a9ba';
-const auctioneer = {
+// Creating an object:
+// Create an auctioneer object of type User
+const auctioneer: User = {
   id: auctioneerId,
   username: 'auctioneer',
   balance: 100,
@@ -19,12 +21,16 @@ const auctioneer = {
 users.set(auctioneerId, auctioneer);
 
 // define the routes
+//                     Anonymous f(x) - a function with no name. Used when you want to pass in a function into another function.
 router.get('/auctions', (req, res) => {
+  // Get all the auctions that currently exist in our database
   const auctionList = Array.from(auctions.values());
+  //response:code 200   & return json of our auctionList
   return res.status(200).json({ auctions: auctionList });
 });
 
 router.get('/auction/:id', (req, res) => {
+  // const id = req.params.id (equivalent code)
   const { id } = req.params;
   const auction = auctions.get(id);
   if (auction) {

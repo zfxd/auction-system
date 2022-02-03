@@ -18,6 +18,7 @@ export type Bid = {
 }
 
 export type User = {
+  // ? means that the id is optional. (When interacting with the API) - the backend will create the ID.
   id?: string;
   username: string;
   balance: number;
