@@ -6,7 +6,8 @@ export type Auction = {
   start: Date;
   end: Date;
   item: string;
-  startingBid: number
+  startingPrice: number
+  currentBid?: Bid;
   minIncrement: number	// the minimum difference between the highest existing bid and an incoming bid
 }
 
